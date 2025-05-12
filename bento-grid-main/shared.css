@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+:root {
+  --color-purple-100: hsl(254, 88%, 90%);
+  --color-purple-500: hsl(256, 67%, 59%);
+  --color-yellow-100: hsl(31, 66%, 93%);
+  --color-yellow-500: hsl(39, 100%, 71%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-black: hsl(0, 0%, 7%);
+  --mobile-width: s 375px;
+  --desktop-width: 1440px;
+
+  --bento-card-border-radius: 12px;
+}
+
+body {
+  font-size: 18px;
+  font-family: "DM SANS", sans-serif;
+  background: #fff1f2f4;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: inherit;
+  font-weight: var(--font-weigth, 400);
+  font-size: var(--bento-header-font-size, 3rem);
+  text-wrap: var(--bento-header-text-wrap, balance);
+}
+
+.bento-grid {
+  display: grid;
+  font: inherit;
+  gap: var(--grid-gap, 2rem);
+  padding: 10px;
+  grid-template-areas:
+    "social-media"
+    "multiple-accounts"
+    "consistent-post"
+    "schedule-posts"
+    "grow-followers"
+    "faster-grow"
+    "ai-content"
+    "create-post";
+}
+
+.bento-grid__card {
+  font: inherit;
+  max-width: 100%;
+  border-radius: var(--bento-card-border-radius, 16px);
+  padding: var(--card-padding, 1rem);
+  display: grid;
+  grid-template: var(--bento-card-grid-template);
+  text-align: var(--bento-card-text-align, center);
+  justify-items: var(--bento-card-justify-items, center);
+  align-content: var(--bento-card-align-content, center);
+}
+
+.bento-grid__card img {
+  width: var(--bento-card-img-width, 100%);
+  order: var(--bento-card-img-order);
+}
+
+.bento-grid__card:first-of-type {
+  img {
+    --bento-card-img-width: 60%;
+  }
+}
+
+@media (min-width: 30rem) {
+  .bento-grid {
+    grid-template-areas:
+      "create-post social-media social-media schedule-posts"
+      "create-post multiple-accounts consistent-post schedule-posts"
+      "ai-content multiple-accounts consistent-post schedule-posts"
+      "ai-content faster-grow grow-followers grow-followers";
+  }
+}
+
+#create-post {
+  grid-area: create-post;
+}
+#social-media {
+  grid-area: social-media;
+}
+#schedule-posts {
+  grid-area: schedule-posts;
+}
+#ai-content {
+  grid-area: ai-content;
+}
+#faster-grow {
+  grid-area: faster-grow;
+}
+#grow-followers {
+  grid-area: grow-followers;
+}
+#consistent-post {
+  grid-area: consistent-post;
+}
+#multiple-accounts {
+  grid-area: multiple-accounts;
+}
+
+@layer utilities {
+  .yellow-500 {
+    color: var(--color-yellow-500);
+  }
+
+  .bg-purple-500 {
+    background: var(--color-purple-500);
+  }
+
+  .bg-purple-100 {
+    background: var(--color-purple-100);
+  }
+
+  .bg-yellow-500 {
+    background: var(--color-yellow-500);
+  }
+
+  .bg-yellow-100 {
+    background: var(--color-yellow-100);
+  }
+
+  .bg-white {
+    background: var(--color-white);
+  }
+
+  .color-white {
+    color: var(--color-white);
+  }
+
+  .color-black {
+    color: var(--color-black);
+  }
+
+  .italic {
+    font-style: italic;
+  }
+}
