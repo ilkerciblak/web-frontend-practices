@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-white: hsl(0, 0%, 100%);
+  --color-slate-300: hsl(212, 45%, 89%);
+  --color-slate-500: hsl(216, 15%, 48%);
+  --color-slate-900: hsl(218, 44%, 22%);
+  --font-weight: 400;
+  --font-size: 15px;
+  --main-container-max-width: 80%;
+}
+
+body {
+  font-family: "Outline", sans-serif;
+  font-size: var(--font-size, 15px);
+  font-weight: var(--font-weight, 400);
+  background: var(--color-slate-300);
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10em;
+}
+
+.main-container {
+  background-color: var(--color-white);
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  max-width: var(--main-container-max-width);
+  border-radius: 1.25em;
+  overflow: hidden;
+  box-shadow: 0 2px 3px 1px var(--color-slate-500);
+}
+
+.main-container__image-holder {
+  margin: 1em;
+  border-radius: calc(1.25em - 0.5em);
+  overflow: hidden;
+
+  .qr-image {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.main-container__description {
+  padding: 1em 0;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+h1 {
+  --font-weight: 700;
+}
+
+.tx-title {
+  color: var(--color-slate-900, black);
+  font-weight: var(--font-weight);
+}
+
+.tx-description {
+  color: var(--color-slate-500);
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+}
+
+.tx-center {
+  text-align: center;
+}
+
+footer {
+  justify-self: flex-end;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution__link {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 375px) {
+  :root {
+    --main-container-max-width: 300px;
+  }
+}
